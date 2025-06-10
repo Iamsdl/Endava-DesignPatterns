@@ -1,0 +1,14 @@
+/app/Bridge/Before/bin/Debug/net8.0/Before
+/app/Bridge/Before/bin/Debug/net8.0/Before.deps.json
+/app/Bridge/Before/bin/Debug/net8.0/Before.runtimeconfig.json
+/app/Bridge/Before/bin/Debug/net8.0/Before.dll
+/app/Bridge/Before/bin/Debug/net8.0/Before.pdb
+/app/Bridge/Before/obj/Debug/net8.0/Before.GeneratedMSBuildEditorConfig.editorconfig
+/app/Bridge/Before/obj/Debug/net8.0/Before.AssemblyInfoInputs.cache
+/app/Bridge/Before/obj/Debug/net8.0/Before.AssemblyInfo.cs
+/app/Bridge/Before/obj/Debug/net8.0/Before.csproj.CoreCompileInputs.cache
+/app/Bridge/Before/obj/Debug/net8.0/Before.dll
+/app/Bridge/Before/obj/Debug/net8.0/refint/Before.dll
+/app/Bridge/Before/obj/Debug/net8.0/Before.pdb
+/app/Bridge/Before/obj/Debug/net8.0/Before.genruntimeconfig.cache
+/app/Bridge/Before/obj/Debug/net8.0/ref/Before.dll

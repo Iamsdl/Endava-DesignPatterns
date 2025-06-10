@@ -1,0 +1,17 @@
+# Use Microsoft's official .NET 8 SDK image
+FROM mcr.microsoft.com/dotnet/sdk:8.0
+
+# Optional: Set a working directory
+WORKDIR /app
+
+# Optional: Install any additional tools you want here
+# RUN apt-get update && apt-get install -y git
+
+# Optional: Copy your project files (if you want to build inside this image)
+# COPY . .
+
+# Optional: Restore dependencies
+# RUN dotnet restore
+
+# Default command (can be overridden)
+CMD ["bash"]

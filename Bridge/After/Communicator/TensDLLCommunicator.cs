@@ -7,9 +7,6 @@ using TensiometerDLL;
 
 namespace After.Communicator
 {
-    /// <summary>
-    /// Honestly it's more like an adapter for the TensiometerDLL than just a "communicator".
-    /// </summary>
     public class DLLCommunicator : IDeviceCommunicator
     {
         private readonly TensDLL tensiometerDLL = new();
@@ -21,11 +18,19 @@ namespace After.Communicator
 
         public bool IsFunctional() => true;
 
-        public string SendCommand(string command)
+        public string SendCommand(DeviceCommand command)
         {
-            // simulate DLL command routing
-            tensiometerDLL.PerformMeasurement(out double sys, out double dia);
-            return $"{sys}:{dia}";
+            switch (command)
+            {
+                case DeviceCommand.Start:
+                    tensiometerDLL.PerformMeasurement(out double sys, out double dia);
+                    return $"{sys}:{dia}";
+                case DeviceCommand.Stop:
+                    tensiometerDLL.StopMeasurement();
+                    return "ok";
+                default:
+                    return "ok";
+            }
         }
     }
 

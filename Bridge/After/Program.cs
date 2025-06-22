@@ -3,7 +3,7 @@ using After.Drivers;
 using DBModel;
 
 {
-    var tensiometer = new TensiometerDriver("TensoSerial", new SerialCommunicator("COM3"));
+    var tensiometer = new TensiometerDriver("TestSerialTensiometer", new SerialCommunicator("COM3"));
 
     tensiometer.InitialiseDevice();
     Console.WriteLine($"Is functional: {tensiometer.IsFunctional()}");
@@ -16,7 +16,7 @@ using DBModel;
 }
 Console.WriteLine();
 {
-    var tensiometer = new TensiometerDriver("TensoDLL", new DLLCommunicator());
+    var tensiometer = new TensiometerDriver("TestDLLTensiometer", new DLLCommunicator());
 
     tensiometer.InitialiseDevice();
     Console.WriteLine($"Is functional: {tensiometer.IsFunctional()}");

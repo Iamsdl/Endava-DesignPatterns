@@ -10,7 +10,7 @@ namespace After.Communicator
     {
         void Initialise();
         bool IsFunctional();
-        string SendCommand(string command);
+        string SendCommand(DeviceCommand command);
     }
 
 }

@@ -42,3 +42,8 @@
 /Bridge/Before/obj/Before.csproj.nuget.g.props
 /Bridge/Before/obj/project.assets.json
 /Bridge/Before/obj/project.nuget.cache
+/DBModel/bin/Debug/net8.0
+/DBModel/obj
+/Prototype/.vs
+/Prototype/Prototype/bin/Debug/net8.0
+/Prototype/Prototype/obj

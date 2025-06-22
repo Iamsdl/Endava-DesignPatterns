@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DBModel\DBModel.csproj" />
+    <ProjectReference Include="..\..\DBModel\DBModel.csproj" />
     <ProjectReference Include="..\TensiometerDLL\TensiometerDLL.csproj" />
   </ItemGroup>
 

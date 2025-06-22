@@ -1,11 +1,5 @@
 ﻿using Before.Devices;
 using DBModel;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using TensiometerDLL;
 
 namespace Before.Drivers
@@ -16,7 +10,7 @@ namespace Before.Drivers
 
         public override void InitialiseDevice()
         {
-            Console.WriteLine("Initialised DLLTensiometerDriver");
+            Console.WriteLine($"Initialised {name}");
         }
 
         public override bool IsFunctional()

@@ -39,7 +39,7 @@ namespace Before.Devices
                     MeasurementCategory = MeasurementCategoryEnum.BloodPressure,
                     MeasurementType = MeasurementTypeEnum.Systolic,
                     MeasurementSide = MeasurementSideEnum.Left,
-                    Value = 120,
+                    Value = 121,
                     Unit = "mmHG"
                 },
                 new Measurement()
@@ -47,7 +47,7 @@ namespace Before.Devices
                     MeasurementCategory = MeasurementCategoryEnum.BloodPressure,
                     MeasurementType = MeasurementTypeEnum.Diastolic,
                     MeasurementSide = MeasurementSideEnum.Left,
-                    Value = 80,
+                    Value = 81,
                     Unit = "mmHG"
                 }
             };

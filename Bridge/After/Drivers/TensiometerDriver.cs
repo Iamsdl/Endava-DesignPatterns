@@ -11,14 +11,11 @@ namespace After.Drivers
     public class TensiometerDriver(string name, IDeviceCommunicator communicator)
     : DeviceDriver(name, communicator)
     {
-        public const string StartMeasurementCommand = "0x00 0x01 0x020";
-        public const string StopMeasurementCommand = "0x00 0x02 0x021";
-
         public override List<Measurement> StartMeasurement()
         {
             Console.WriteLine($"Starting BloodPressure Measurement on {this.Name}");
 
-            var result = Communicator.SendCommand(StartMeasurementCommand);
+            var result = Communicator.SendCommand(DeviceCommand.Start);
 
             // interpret result from communicator
             var parts = result.Split(':');
@@ -26,11 +23,11 @@ namespace After.Drivers
                 !double.TryParse(parts[0], out var systolic) ||
                 !double.TryParse(parts[1], out var diastolic))
             {
-                systolic = 120; diastolic = 80; // fallback
+                throw new Exception("Something went wrong with the measurement");
             }
 
-            return new List<Measurement>
-            {
+            return
+            [
                 new() {
                     MeasurementCategory = MeasurementCategoryEnum.BloodPressure,
                     MeasurementType = MeasurementTypeEnum.Systolic,
@@ -45,13 +42,13 @@ namespace After.Drivers
                     Value = diastolic,
                     Unit = "mmHG"
                 }
-            };
+            ];
         }
 
         public override void StopMeasurement()
         {
             Console.WriteLine($"Stopping BloodPressure Measurement on {this.Name}");
-            Communicator.SendCommand(StopMeasurementCommand);
+            Communicator.SendCommand(DeviceCommand.Stop);
         }
     }
 

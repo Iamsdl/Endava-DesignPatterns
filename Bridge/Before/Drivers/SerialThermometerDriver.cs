@@ -1,18 +1,14 @@
-ï»¿using Bridge.Before.Devices;
+using Bridge.Before.Devices;
 using DBModel;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics.Metrics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Before.Devices
 {
-    public class SerialTensiometerDriver(string name, string port) : SerialDeviceDriver(name, port)
+    public class SerialThermometerDriver(string name, string port) : SerialDeviceDriver(name, port)
     {
-        public static readonly byte[] StartMeasurementCommand = [0x01, 0x01, 0x020];
-        public static readonly byte[] StopMeasurementCommand = [0x01, 0x01, 0x021];
+        public static readonly byte[] StartMeasurementCommand = [0x01, 0x02, 0x020];
+        public static readonly byte[] StopMeasurementCommand = [0x01, 0x02, 0x021];
 
         public override void InitialiseDevice()
         {
@@ -21,7 +17,7 @@ namespace Before.Devices
 
         public override List<Measurement> StartMeasurement()
         {
-            Console.WriteLine($"Starting BloodPressure Measurement on {this.Name}");
+            Console.WriteLine($"Starting Temperature Measurement on {this.Name}");
 
             serialPort.Open();
             Console.WriteLine($"Sending command: {BitConverter.ToString(StartMeasurementCommand)}");
@@ -33,33 +29,24 @@ namespace Before.Devices
             serialPort.Close();
 
             //interpret result from serialPort
-            int systolic = 120;
-            int diastolic = 80;
+            double temperature = 37.2;
 
             return new List<Measurement>()
             {
                 new Measurement()
                 {
-                    MeasurementCategory = MeasurementCategoryEnum.BloodPressure,
-                    MeasurementType = MeasurementTypeEnum.Systolic,
-                    MeasurementSide = MeasurementSideEnum.Left,
-                    Value = systolic,
-                    Unit = "mmHG"
-                },
-                new Measurement()
-                {
-                    MeasurementCategory = MeasurementCategoryEnum.BloodPressure,
-                    MeasurementType = MeasurementTypeEnum.Diastolic,
-                    MeasurementSide = MeasurementSideEnum.Left,
-                    Value = diastolic,
-                    Unit = "mmHG"
+                    MeasurementCategory = MeasurementCategoryEnum.Temperature,
+                    MeasurementType = MeasurementTypeEnum.None,
+                    MeasurementSide = MeasurementSideEnum.None,
+                    Value = temperature,
+                    Unit = "°C"
                 }
             };
         }
 
         public override void CancelMeasurement()
         {
-            Console.WriteLine($"Stopping BloodPressure Measurement on {this.Name}");
+            Console.WriteLine($"Stopping Temperature Measurement on {this.Name}");
 
             serialPort.Open();
             Console.WriteLine($"Sending command: {BitConverter.ToString(StopMeasurementCommand)}");

@@ -18,7 +18,7 @@ namespace After.Drivers
 
         public abstract List<Measurement> StartMeasurement();
 
-        public abstract void StopMeasurement();
+        public abstract void CancelMeasurement();
     }
 
 }

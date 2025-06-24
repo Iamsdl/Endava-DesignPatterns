@@ -9,9 +9,6 @@ namespace After.Communicator
 {
     public class SerialCommunicator(string port) : IDeviceCommunicator
     {
-        private const string startBytes = "0x00 0x01 0x020";
-        private const string stopBytes = "0x00 0x01 0x021";
-
         private readonly SerialPort serialPort = new(port);
 
         public void Initialise()
@@ -24,9 +21,13 @@ namespace After.Communicator
             try
             {
                 serialPort.Open();
+
                 serialPort.Write("test bytes");
-                var result = "ok"; // simulate serialPort.ReadLine()
+                //var result = serialPort.ReadLine();
+                string result = "ok";
+
                 serialPort.Close();
+
                 return result == "ok";
             }
             catch
@@ -35,35 +36,25 @@ namespace After.Communicator
             }
         }
 
-        public string SendCommand(DeviceCommand command)
+        public byte[]? SendCommand(byte[] command)
         {
             try
             {
-                string result;
                 serialPort.Open();
+                
+                Console.WriteLine($"Sending command: {BitConverter.ToString(command)}");
+                serialPort.Write(command, 0, command.Length);
 
-                switch (command)
-                {
-                    case DeviceCommand.Start:
-                        serialPort.WriteLine(startBytes);
-                        result = "121:81";
-                        break;
-                    case DeviceCommand.Stop:
-                        serialPort.WriteLine(stopBytes);
-                        result = "ok";
-                        break;
-                    default:
-                        result = "ok";
-                        break;
-                }
+                var response = new byte[64];
+                //var bytesRead = serialPort.Read(buffer, 0, buffer.Length);
 
                 serialPort.Close();
 
-                return result;
+                return response;
             }
             catch
             {
-                return string.Empty;
+                return null;
             }
         }
     }

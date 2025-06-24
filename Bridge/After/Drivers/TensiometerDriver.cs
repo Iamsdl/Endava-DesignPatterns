@@ -11,20 +11,18 @@ namespace After.Drivers
     public class TensiometerDriver(string name, IDeviceCommunicator communicator)
     : DeviceDriver(name, communicator)
     {
+        private static readonly byte[] StartMeasurementCommand = [0x01, 0x01, 0x020];
+        private static readonly byte[] CancelMeasurementCommand = [0x01, 0x01, 0x021];
+
         public override List<Measurement> StartMeasurement()
         {
             Console.WriteLine($"Starting BloodPressure Measurement on {this.Name}");
 
-            var result = Communicator.SendCommand(DeviceCommand.Start);
+            byte[] result = Communicator.SendCommand(StartMeasurementCommand);
 
             // interpret result from communicator
-            var parts = result.Split(':');
-            if (parts.Length != 2 ||
-                !double.TryParse(parts[0], out var systolic) ||
-                !double.TryParse(parts[1], out var diastolic))
-            {
-                throw new Exception("Something went wrong with the measurement");
-            }
+            int systolic = 120;
+            int diastolic = 80;
 
             return
             [
@@ -45,10 +43,10 @@ namespace After.Drivers
             ];
         }
 
-        public override void StopMeasurement()
+        public override void CancelMeasurement()
         {
             Console.WriteLine($"Stopping BloodPressure Measurement on {this.Name}");
-            Communicator.SendCommand(DeviceCommand.Stop);
+            Communicator.SendCommand(CancelMeasurementCommand);
         }
     }
 

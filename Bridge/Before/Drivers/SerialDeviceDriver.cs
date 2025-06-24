@@ -19,13 +19,7 @@ namespace Bridge.Before.Devices
 
                 serialPort.Close();
 
-
-                if (result != "ok")
-                {
-                    return false;
-                }
-
-                return true;
+                return result == "ok";
             }
             catch
             {

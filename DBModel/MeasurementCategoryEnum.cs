@@ -3,5 +3,6 @@
     public enum MeasurementCategoryEnum
     {
         BloodPressure,
+        Temperature
     }
 }

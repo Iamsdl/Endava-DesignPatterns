@@ -9,7 +9,7 @@ namespace Prototype
 {
     public class TimezoneMiddleware
     {
-        public void Convert(List<AppointmentDTO> appointments)
+        public static void Convert(List<AppointmentDTO> appointments)
         {
             foreach (var appointment in appointments)
             {

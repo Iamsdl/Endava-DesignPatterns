@@ -41,8 +41,7 @@ foreach (var appointment in appointments)
 }
 
 //adjust the StartDates based on the owner before returning to UI.
-TimezoneMiddleware middleware = new TimezoneMiddleware();
-middleware.Convert(appointments);
+TimezoneMiddleware.Convert(appointments);
 
 Console.WriteLine($"Appointments after they are adjusted by the custom middleware.");
 foreach (var appointment in appointments)

@@ -17,6 +17,16 @@ foreach (var appointment in appointments)
 //clone them for doctors
 List<AppointmentDTO> docAppointments = appointments.Select(x =>
 {
+    //var appointmentDTO = new AppointmentDTO()
+    //{
+    //    Id = x.Id,
+    //    PatientId = x.PatientId,
+    //    DoctorId = x.DoctorId,
+    //    CabinId = x.CabinId,
+    //    StartTime = x.StartTime,
+    //    EndTime = x.EndTime,
+    //    TimezoneOwnerId = x.TimezoneOwnerId
+    //};
     var appointmentDTO = (AppointmentDTO)x.Clone();
     appointmentDTO.TimezoneOwnerId = appointmentDTO.DoctorId;
     return appointmentDTO;

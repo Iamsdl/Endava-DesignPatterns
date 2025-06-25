@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Before.Drivers.DeviceDriver" Collapsed="true">
+    <Position X="6.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAASAAAAQAAAAAAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>Drivers\DeviceDriver.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Before.Drivers.UsbDeviceDriver" Collapsed="true">
+    <Position X="4" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAACgAAAAACAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Drivers\UsbDeviceDriver.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Before.Drivers.UsbTensiometerDriver" Collapsed="true">
+    <Position X="5" Y="3.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAAQAAAAAIAAAAAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>Drivers\UsbTensiometerDriver.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Before.Drivers.UsbThermometerDriver" Collapsed="true">
+    <Position X="2.5" Y="3.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAAQAAAAAIAAAAAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>Drivers\UsbThermometerDriver.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bridge.Before.Devices.SerialDeviceDriver" Collapsed="true">
+    <Position X="9" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Drivers\SerialDeviceDriver.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Before.Devices.SerialTensiometerDriver" Collapsed="true">
+    <Position X="10" Y="3.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAAQAAAAAIAAAAAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>Drivers\SerialTensiometerDriver.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Before.Devices.SerialThermometerDriver" Collapsed="true">
+    <Position X="7.5" Y="3.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAAQAAAAAIAAAAAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>Drivers\SerialThermometerDriver.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

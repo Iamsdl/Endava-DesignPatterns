@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="After.Drivers.DeviceDriver">
+    <Position X="7" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAIAAAAAAAASAAAAQAAAAAAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>Drivers\DeviceDriver.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Communicator" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="After.Drivers.TensiometerDriver" Collapsed="true">
+    <Position X="5" Y="3.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAgAAAAAEAA=</HashCode>
+      <FileName>Drivers\TensiometerDriver.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="After.Drivers.ThermometerDriver" Collapsed="true">
+    <Position X="8.25" Y="3.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAgAAAAAEAA=</HashCode>
+      <FileName>Drivers\ThermometerDriver.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="After.Communicator.SerialCommunicator" BaseTypeListCollapsed="true">
+    <Position X="11" Y="3.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAACAAAAAAAAAAAAAACgAAAAAAAAA=</HashCode>
+      <FileName>Communicator\SerialCommunicator.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="After.Communicator.UsbCommunicator" BaseTypeListCollapsed="true">
+    <Position X="13.25" Y="3.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAACgAAAAACAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>Communicator\UsbCommunicator.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.1" Collapsed="true" />
+  </Class>
+  <Interface Name="After.Communicator.IDeviceCommunicator">
+    <Position X="11" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAACAAAAAAAAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>Communicator\ICommunicator.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

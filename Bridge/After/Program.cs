@@ -3,7 +3,7 @@ using After.Drivers;
 using DBModel;
 
 {
-    var tensiometer = new TensiometerDriver("TestSerialTensiometer", new SerialCommunicator("COM3"));
+    DeviceDriver tensiometer = new TensiometerDriver("TestSerialTensiometer", new SerialCommunicator("COM3"));
 
     tensiometer.InitialiseDevice();
     Console.WriteLine($"Is functional: {tensiometer.IsFunctional()}");
@@ -16,7 +16,7 @@ using DBModel;
 }
 Console.WriteLine();
 {
-    var tensiometer = new TensiometerDriver("TestUsbTensiometer", new UsbCommunicator(0x0A5C, 0x5843));
+    DeviceDriver tensiometer = new TensiometerDriver("TestUsbTensiometer", new UsbCommunicator(0x0A5C, 0x5843));
 
     tensiometer.InitialiseDevice();
     Console.WriteLine($"Is functional: {tensiometer.IsFunctional()}");
@@ -29,7 +29,7 @@ Console.WriteLine();
 }
 Console.WriteLine();
 {
-    var thermometer = new ThermometerDriver("TestSerialThermometer", new SerialCommunicator("COM3"));
+    DeviceDriver thermometer = new ThermometerDriver("TestSerialThermometer", new SerialCommunicator("COM3"));
 
     thermometer.InitialiseDevice();
     Console.WriteLine($"Is functional: {thermometer.IsFunctional()}");
@@ -42,7 +42,7 @@ Console.WriteLine();
 }
 Console.WriteLine();
 {
-    var thermometer = new ThermometerDriver("TestUsbThermometer", new UsbCommunicator(0x0A5C, 0x5844));
+    DeviceDriver thermometer = new ThermometerDriver("TestUsbThermometer", new UsbCommunicator(0x0A5C, 0x5844));
 
     thermometer.InitialiseDevice();
     Console.WriteLine($"Is functional: {thermometer.IsFunctional()}");

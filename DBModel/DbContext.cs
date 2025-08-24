@@ -15,6 +15,8 @@ namespace DBModel
         public const string cabin1Id = "36cc6db6-9590-4756-8087-ddeea288cba0";
         public const string cabin2Id = "b8422506-d2eb-42c4-aae2-ea407cb5684c";
 
+        public static List<ScheduleTemplate> ScheduleTemplates = new();
+
         public static List<Patient> Patients { get; set; } =
         [
             new Patient()
@@ -104,5 +106,10 @@ namespace DBModel
                 EndTime = new DateTime(2025,06,25,11,30,0,DateTimeKind.Utc)
             }
         ];
+
+        public static async Task SaveChangesAsync()
+        {
+            return;
+        }
     }
 }

@@ -47,3 +47,8 @@
 /Prototype/.vs
 /Prototype/Prototype/bin/Debug/net8.0
 /Prototype/Prototype/obj
+/Adapter/.vs
+/Adapter/Adapter/bin/Debug/net8.0
+/Adapter/Adapter/obj
+/Adapter/ThirdPartyAdapter/bin/Debug/net8.0
+/Adapter/ThirdPartyAdapter/obj

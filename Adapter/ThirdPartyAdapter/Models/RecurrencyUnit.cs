@@ -1,6 +1,6 @@
-﻿namespace ThirdPartyAdapter
+﻿namespace ThirdParty.Models
 {
-    public enum RecurrencyUnit
+    internal enum RecurrencyUnit
     {
         Minutes,
         Hours,
@@ -10,7 +10,7 @@
         Years
     }
 
-    public static class RecurrencyUnitExtensions
+    internal static class RecurrencyUnitExtensions
     {
         public static string EnumToString(this RecurrencyUnit unit)
         {

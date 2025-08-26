@@ -1,7 +1,6 @@
-﻿using AdapterPattern;
+﻿using After;
 using DBModel;
 using System.Text.Json;
-using System.Text.Json.Serialization;
 
 var schedule = new ScheduleTemplate
 {

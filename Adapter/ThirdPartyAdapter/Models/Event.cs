@@ -1,4 +1,4 @@
-﻿namespace ThirdPartyAdapter
+﻿namespace ThirdParty.Models
 {
     internal class Event
     {

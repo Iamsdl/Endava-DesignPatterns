@@ -1,7 +1,8 @@
 ﻿using DBModel;
 using System.Text.Json;
+using ThirdParty.Models;
 
-namespace ThirdPartyAdapter
+namespace ThirdParty
 {
     public class Adapter
     {
@@ -39,7 +40,7 @@ namespace ThirdPartyAdapter
                 if (templateEvent.DayOfWeek.HasValue)
                 {
                     @event.StartTime = scheduleTemplate.StartTime.Date + templateEvent.StartTime;
-                    @event.Duration = (scheduleTemplate.StartTime.Date + templateEvent.EndTime) - @event.StartTime;
+                    @event.Duration = scheduleTemplate.StartTime.Date + templateEvent.EndTime - @event.StartTime;
 
                     @event.Recurrency = new Recurrency
                     {
@@ -55,7 +56,7 @@ namespace ThirdPartyAdapter
                     ArgumentNullException.ThrowIfNull(templateEvent.Day, nameof(templateEvent.Day));
 
                     @event.StartTime = templateEvent.Day.Value.Date + templateEvent.StartTime;
-                    @event.Duration = (templateEvent.Day.Value.Date + templateEvent.EndTime) - @event.StartTime;
+                    @event.Duration = templateEvent.Day.Value.Date + templateEvent.EndTime - @event.StartTime;
                     @event.Recurrency = null;
                 }
 

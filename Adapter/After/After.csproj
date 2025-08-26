@@ -9,7 +9,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\DBModel\DBModel.csproj" />
-    <ProjectReference Include="..\ThirdPartyAdapter\ThirdPartyAdapter.csproj" />
+    <ProjectReference Include="..\ThirdPartyAdapter\ThirdParty.csproj" />
   </ItemGroup>
 
 </Project>

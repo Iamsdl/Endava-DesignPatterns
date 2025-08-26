@@ -1,8 +1,6 @@
-﻿using System.Text.Json.Serialization;
-
-namespace ThirdPartyAdapter
+﻿namespace ThirdParty.Models
 {
-    public class Recurrency
+    internal class Recurrency
     {
         public string Unit { get; private set; }
 
